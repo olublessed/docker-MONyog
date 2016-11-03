@@ -7,6 +7,9 @@ RUN wget -O monyog.rpm https://www.webyog.com/downloadtracker?wy=1551179&pType=R
 # prepare volume
 RUN mkdir /usr-start && mv /usr/local/MONyog /usr-start
 
+# remove old ssh script
+RUN rm -f /usr/sbin/runssh.sh
+
 # Expose
 EXPOSE 5555 22
 
