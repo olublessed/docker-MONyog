@@ -1,4 +1,4 @@
-FROM babim/centos6base
+FROM babim/centos6base:ssh
 
 # install
 RUN wget -O monyog.rpm https://www.webyog.com/downloadtracker?wy=1551179&pType=RPM&bit=64 && \
@@ -8,7 +8,7 @@ RUN wget -O monyog.rpm https://www.webyog.com/downloadtracker?wy=1551179&pType=R
 RUN mkdir /usr-start && mv /usr/local/MONyog /usr-start
 
 # Expose
-EXPOSE 5555
+EXPOSE 5555 22
 
 VOLUME ["/usr/local/MONyog"]
 
