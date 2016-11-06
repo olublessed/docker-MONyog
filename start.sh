@@ -19,6 +19,9 @@ if [ "${AUTHORIZED_KEYS}" != "**None**" ]; then
     done
 fi
 
+# set password root is root
+SSHPASS1=${SSHPASS:-root}
+echo "root:$SSHPASS1" | chpasswd
 exec /usr/sbin/sshd
 
 # Prepare
